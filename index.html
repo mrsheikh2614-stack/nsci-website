@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>National Students' Council of India | NSCI</title>
+
+  <meta name="description"
+    content="National Students' Council of India — Students' Voice, Students' Future.">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fffdf5;
+      color: #123f35;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,253,245,0.96);
+      border-bottom: 1px solid #e5d9ad;
+    }
+
+    .navbar {
+      max-width: 1150px;
+      margin: auto;
+      padding: 13px 20px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-text {
+      font-size: 22px;
+      font-weight: 900;
+      color: #006b4f;
+      letter-spacing: 2px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #123f35;
+      font-weight: bold;
+      margin-left: 18px;
+    }
+
+    /* HERO POSTER */
+    .hero {
+      max-width: 1150px;
+      margin: 25px auto;
+      padding: 0 15px;
+    }
+
+    .hero img {
+      width: 100%;
+      display: block;
+      border-radius: 22px;
+      box-shadow: 0 12px 35px rgba(0,70,45,0.15);
+    }
+
+    /* MEMBER COUNTER */
+    .counter {
+      max-width: 900px;
+      margin: 25px auto;
+      padding: 25px;
+
+      text-align: center;
+
+      color: white;
+      background: linear-gradient(
+        135deg,
+        #006b4f,
+        #004d3a
+      );
+
+      border-radius: 20px;
+    }
+
+    .counter small {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .counter-number {
+      display: block;
+      font-size: 48px;
+      font-weight: bold;
+      color: #ffe28a;
+      margin: 5px;
+    }
+
+    /* SECTIONS */
+    section {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #006b4f;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    .subtitle {
+      max-width: 750px;
+      margin: 0 auto 30px;
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    /* CARDS */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #eadfb8;
+      border-radius: 18px;
+      padding: 22px;
+
+      box-shadow: 0 5px 18px rgba(0,70,45,0.07);
+    }
+
+    .card h3 {
+      color: #006b4f;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      line-height: 1.6;
+    }
+
+    /* MISSION */
+    .mission {
+      background: #f5edce;
+      border-radius: 22px;
+      padding: 30px;
+    }
+
+    .mission ul {
+      margin-top: 20px;
+      padding-left: 25px;
+    }
+
+    .mission li {
+      line-height: 1.9;
+    }
+
+    /* JOIN */
+    .join-container {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
+    }
+
+    form,
+    .qr-box-container {
+      background: white;
+      border: 1px solid #eadfb8;
+      border-radius: 20px;
+      padding: 25px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 12px 0 6px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+
+      border: 1px solid #cfc6a5;
+      border-radius: 10px;
+
+      font-size: 16px;
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      margin-top: 18px;
+
+      border: none;
+      border-radius: 10px;
+
+      background: #006b4f;
+      color: white;
+
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #004d3a;
+    }
+
+    button:disabled {
+      opacity: 0.6;
+    }
+
+    #status {
+      margin-top: 15px;
+      line-height: 1.5;
+    }
+
+    /* QR */
+    .qr-box-container {
+      text-align: center;
+    }
+
+    .qr-placeholder {
+      height: 190px;
+
+      display: grid;
+      place-items: center;
+
+      background: #faf7e9;
+
+      border: 2px dashed #d8a928;
+      border-radius: 12px;
+
+      margin-top: 15px;
+    }
+
+    /* FOOTER */
+    footer {
+      margin-top: 70px;
+      padding: 30px 20px;
+
+      text-align: center;
+
+      background: #004d3a;
+      color: white;
+    }
+
+    footer span {
+      display: block;
+      margin-top: 8px;
+      color: #ffe28a;
+    }
+
+    /* MOBILE */
+    @media(max-width: 750px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .join-container {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width: 500px) {
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      h2 {
+        font-size: 26px;
+      }
+
+      .counter-number {
+        font-size: 40px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+
+  <div class="navbar">
+
+    <div class="logo-text">
+      NSCI
+    </div>
+
+    <div class="nav-links">
+
+      <a href="#about">About</a>
+
+      <a href="#focus">Focus</a>
+
+      <a href="#mission">Mission</a>
+
+      <a href="#join">Join</a>
+
+    </div>
+
+  </div>
+
+</nav>
+
+
+<!-- YOUR POSTER -->
+
+<header class="hero">
+
+  <img
+    src="nsci-poster.png"
+    alt="National Students' Council of India"
+  >
+
+</header>
+
+
+<!-- MEMBER COUNTER -->
+
+<div class="counter">
+
+  <small>
+    NSCI Community
+  </small>
+
+  <span
+    class="counter-number"
+    id="memberCount"
+  >
+    0
+  </span>
+
+  <div>
+    Registered Members
+  </div>
+
+</div>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+  <h2>
+    Students' Voice, Students' Future
+  </h2>
+
+  <p class="subtitle">
+
+    National Students' Council of India (NSCI)
+    is a student-focused organisation built around
+    education, welfare, equal opportunities,
+    respectful campuses, student representation,
+    leadership and innovation.
+
+  </p>
+
+</section>
+
+
+<!-- FOCUS -->
+
+<section id="focus">
+
+  <h2>
+    Our Focus Areas
+  </h2>
+
+  <div class="cards">
+
+    <div class="card">
+
+      <h3>
+        Quality Education
+      </h3>
+
+      <p>
+        Learn, grow and succeed through better
+        educational opportunities and knowledge.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Student Welfare
+      </h3>
+
+      <p>
+        Support, guidance and awareness
+        for students and their needs.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Equal Opportunities
+      </h3>
+
+      <p>
+        Encourage fair opportunities and
+        a respectful environment for every student.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Safe & Respectful Campus
+      </h3>
+
+      <p>
+        Promote safety, dignity, respect
+        and a positive campus culture.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Student Representation
+      </h3>
+
+      <p>
+        Create channels where student concerns,
+        ideas and suggestions can be heard.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Leadership & Innovation
+      </h3>
+
+      <p>
+        Encourage students to think,
+        lead, create and contribute.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Knowledge & Development
+      </h3>
+
+      <p>
+        Skills, workshops and learning
+        opportunities for personal development.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Community Support
+      </h3>
+
+      <p>
+        Encourage helpful and constructive
+        community participation.
+      </p>
+
+    </div>
+
+
+    <div class="card">
+
+      <h3>
+        Events & Activities
+      </h3>
+
+      <p>
+        Learn, participate and make a
+        positive impact through activities.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MISSION -->
+
+<section id="mission">
+
+  <div class="mission">
+
+    <h2>
+      Our Mission
+    </h2>
+
+    <ul>
+
+      <li>
+        Raise student concerns through representation.
+      </li>
+
+      <li>
+        Promote quality education and knowledge.
+      </li>
+
+      <li>
+        Support student welfare.
+      </li>
+
+      <li>
+        Encourage equal opportunities.
+      </li>
+
+      <li>
+        Ensure safe and respectful environments.
+      </li>
+
+      <li>
+        Develop leadership and innovation.
+      </li>
+
+      <li>
+        Encourage unity and cooperation.
+      </li>
+
+      <li>
+        Promote positive social contribution.
+      </li>
+
+    </ul>
+
+  </div>
+
+</section>
+
+
+<!-- JOIN -->
+
+<section id="join">
+
+  <h2>
+    Join NSCI
+  </h2>
+
+  <p class="subtitle">
+
+    Become part of the student community.
+    Your submitted information is intended
+    for authorised administration.
+
+  </p>
+
+
+  <div class="join-container">
+
+
+    <!-- FORM -->
+
+    <form id="joinForm">
+
+      <label>
+        Full Name
+      </label>
+
+      <input
+        id="name"
+        type="text"
+        placeholder="Enter your full name"
+        required
+      >
+
+
+      <label>
+        Mobile Number
+      </label>
+
+      <input
+        id="phone"
+        type="tel"
+        placeholder="+91XXXXXXXXXX"
+        required
+      >
+
+
+      <label>
+        Email
+      </label>
+
+      <input
+        id="email"
+        type="email"
+        placeholder="you@example.com"
+        required
+      >
+
+
+      <button
+        id="joinBtn"
+        type="submit"
+      >
+        JOIN NSCI
+      </button>
+
+
+      <div id="status"></div>
+
+    </form>
+
+
+    <!-- QR -->
+
+    <div class="qr-box-container">
+
+      <h3>
+        JOIN NSCI
+      </h3>
+
+      <div class="qr-placeholder">
+
+        <b>
+          YOUR QR CODE HERE
+        </b>
+
+      </div>
+
+      <p style="margin-top:15px;">
+        Official NSCI joining QR code
+        can be placed here.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <b>
+    NATIONAL STUDENTS' COUNCIL OF INDIA (NSCI)
+  </b>
+
+  <span>
+    EDUCATE • UNITE • EMPOWER
+  </span>
+
+</footer>
+
+
+<!-- FIREBASE -->
+
+<script type="module">
+
+  import {
+    initializeApp
+  }
+  from
+  "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+
+
+  import {
+    getFirestore,
+    collection,
+    addDoc,
+    serverTimestamp,
+    getDocs
+  }
+  from
+  "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+
+
+  /*
+  ========================================
+  PASTE YOUR FIREBASE CONFIG HERE
+  ========================================
+  */
+
+  const firebaseConfig = {
+
+    apiKey: "YOUR_API_KEY",
+
+    authDomain:
+      "YOUR_PROJECT.firebaseapp.com",
+
+    projectId:
+      "YOUR_PROJECT_ID",
+
+    storageBucket:
+      "YOUR_PROJECT.firebasestorage.app",
+
+    messagingSenderId:
+      "YOUR_MESSAGING_SENDER_ID",
+
+    appId:
+      "YOUR_APP_ID"
+
+  };
+
+
+  const app =
+    initializeApp(firebaseConfig);
+
+
+  const db =
+    getFirestore(app);
+
+
+  /*
+  ========================================
+  JOIN FORM
+  ========================================
+  */
+
+  const form =
+    document.getElementById("joinForm");
+
+  const button =
+    document.getElementById("joinBtn");
+
+  const status =
+    document.getElementById("status");
+
+
+  form.addEventListener(
+    "submit",
+    async function(event) {
+
+      event.preventDefault();
+
+      button.disabled = true;
+
+      status.innerText =
+        "Submitting your membership...";
+
+
+      try {
+
+        await addDoc(
+          collection(db, "members"),
+          {
+
+            name:
+              document
+              .getElementById("name")
+              .value
+              .trim(),
+
+            phone:
+              document
+              .getElementById("phone")
+              .value
+              .trim(),
+
+            email:
+              document
+              .getElementById("email")
+              .value
+              .trim(),
+
+            joinedAt:
+              serverTimestamp()
+
+          }
+        );
+
+
+        form.reset();
+
+        status.innerText =
+          "✅ Thank you! Your NSCI joining form has been submitted.";
+
+      }
+
+      catch(error) {
+
+        console.error(error);
+
+        status.innerText =
+          "❌ Submission failed. Please try again.";
+
+      }
+
+      finally {
+
+        button.disabled = false;
+
+      }
+
+    }
+  );
+
+
+  /*
+  ========================================
+  MEMBER COUNT
+  ========================================
+  */
+
+  async function
+  loadMemberCount() {
+
+    try {
+
+      const snapshot =
+        await getDocs(
+          collection(db, "members")
+        );
+
+
+      document
+        .getElementById("memberCount")
+        .innerText =
+        snapshot.size;
+
+    }
+
+    catch(error) {
+
+      console.error(error);
+
+      document
+        .getElementById("memberCount")
+        .innerText =
+        "0";
+
+    }
+
+  }
+
+
+  loadMemberCount();
+
+</script>
+
+</body>
+</html>
